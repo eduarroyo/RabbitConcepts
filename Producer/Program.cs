@@ -1,9 +1,6 @@
-using Producer;
-using RabbitMQ.Client;
-
 var builder = Host.CreateApplicationBuilder(args);
 builder.AddServiceDefaults();
-builder.Services.AddSingleton<IConnectionFactory, ConnectionFactory>(srv =>
+builder.Services.AddSingleton<IConnectionFactory, ConnectionFactory>(_ =>
     new ConnectionFactory
     {
         HostName = builder.Configuration["BROKER_HOST"]!,
