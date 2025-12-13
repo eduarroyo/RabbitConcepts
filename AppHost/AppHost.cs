@@ -9,7 +9,7 @@ var producer = builder.AddProject<Producer>("Producer")
     .WithReference(broker)
     .WaitFor(broker);
 
-var consumer = builder.AddProject<Consumer>("Consumer")
+var _ = builder.AddProject<Consumer>("Consumer")
     .WithReference(broker)
     .WaitFor(producer);
 

@@ -1,23 +1,19 @@
-using System.Text;
-using RabbitMQ.Client;
-
 namespace Producer;
 
 public class Worker(ILogger<Worker> logger, IConnectionFactory connectionFactory) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        logger.LogInformation("Starting  at: {time}", DateTimeOffset.Now);
         var connection = await connectionFactory.CreateConnectionAsync(stoppingToken);
         var channelOptions = new CreateChannelOptions(false, false);
         var channel = await connection.CreateChannelAsync(channelOptions, stoppingToken);
-        var queue = channel.QueueDeclareAsync("letterbox", false, false, false,
-            null, cancellationToken: stoppingToken);
+        _ = channel.QueueDeclareAsync("letterbox", false, false, false, cancellationToken: stoppingToken);
 
-        logger.LogInformation("Starting  at: {time}", DateTimeOffset.Now);
         var messageCounter = 0;
         while (!stoppingToken.IsCancellationRequested)
         {
-            var message = $"Mensaje {++messageCounter}";
+            var message = $"Message {++messageCounter}";
             var encodedMessage = Encoding.UTF8.GetBytes(message);
             await channel.BasicPublishAsync("", "letterbox", encodedMessage, stoppingToken);
             logger.LogInformation("Published message: {message}", message);
