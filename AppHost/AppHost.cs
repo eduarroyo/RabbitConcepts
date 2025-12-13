@@ -1,15 +1,18 @@
+using Projects;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 var broker = builder.AddRabbitMQ("Broker")
     .WithManagementPlugin();
 
-var producer = builder.AddProject<Projects.Producer>("Producer")
+var producer = builder.AddProject<Producer>("Producer")
+    .WithReference(broker)
     .WaitFor(broker);
 
-var consumer = builder.AddProject<Projects.Consumer>("Consumer")
-    .WaitFor(broker)
+var consumer = builder.AddProject<Consumer>("Consumer")
+    .WithReference(broker)
     .WaitFor(producer);
 
 var app = builder.Build();
-    
+
 await app.RunAsync();
