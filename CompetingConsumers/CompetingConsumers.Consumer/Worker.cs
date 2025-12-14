@@ -22,7 +22,7 @@ public class Worker(
             var body = ea.Body.ToArray();
             var message = Encoding.UTF8.GetString(body);
             logger.LogInformation("Received message: {message}", message);
-            await Task.Yield();
+            await Task.Delay(2000, stoppingToken);
         };
 
         await channel.BasicConsumeAsync(queueName, true, consumer, stoppingToken);
