@@ -10,10 +10,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Aspire.Hosting.RabbitMQ"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\ProducerConsumer.Consumer\ProducerConsumer.Consumer.csproj"/>
         <ProjectReference Include="..\ProducerConsumer.Producer\ProducerConsumer.Producer.csproj"/>
     </ItemGroup>

@@ -1,5 +1,4 @@
-﻿global using ProducerConsumer.Consumer;
-global using RabbitMQ.Client.Events;
+﻿global using PublisherSubscriber.Publisher;
 global using RabbitMQ.Client;
 global using ServiceDefaults;
 global using System.Text;

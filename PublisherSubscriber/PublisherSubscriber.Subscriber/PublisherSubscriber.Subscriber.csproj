@@ -6,8 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <InvariantGlobalization>true</InvariantGlobalization>
         <PublishAot>true</PublishAot>
-        <UserSecretsId>dotnet-Consumer-68ab1d5a-3786-4f77-b1b8-cf2ba532760a</UserSecretsId>
-        <RootNamespace>ProducerConsumer.Consumer</RootNamespace>
+        <UserSecretsId>dotnet-Subscriber-43b6887b-cc74-4125-b9af-dd4f1c68985c</UserSecretsId>
+        <RootNamespace>PublisherSubscriber.Subscriber</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
