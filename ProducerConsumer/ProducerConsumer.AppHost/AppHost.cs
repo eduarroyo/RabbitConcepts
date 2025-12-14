@@ -5,19 +5,17 @@ var builder = DistributedApplication.CreateBuilder(args);
 var broker = builder.AddRabbitMQ("Broker")
     .WithManagementPlugin();
 
-#region Producer-Consumer
+var producerConsumerQueueName = "ProducerConsumer";
 
-IResourceBuilder<ProjectResource> producer = builder.AddProject<ProducerConsumer_Producer>("ProducerConsumer-Producer")
-    .WithEnvironment("QUEUE_NAME", "pc-letterbox")
+var producer = builder.AddProject<ProducerConsumer_Producer>("ProducerConsumer-Producer")
+    .WithEnvironment("QUEUE_NAME", producerConsumerQueueName)
     .WithReference(broker)
     .WaitFor(broker);
 
-IResourceBuilder<ProjectResource> consumer = builder.AddProject<ProducerConsumer_Consumer>("ProducerConsumer-Consumer")
-    .WithEnvironment("QUEUE_NAME", "pc-letterbox")
+_ = builder.AddProject<ProducerConsumer_Consumer>("ProducerConsumer-Consumer")
+    .WithEnvironment("QUEUE_NAME", producerConsumerQueueName)
     .WithReference(broker)
     .WaitFor(producer);
-
-#endregion
 
 var app = builder.Build();
 

@@ -7,6 +7,7 @@
         <InvariantGlobalization>true</InvariantGlobalization>
         <PublishAot>true</PublishAot>
         <UserSecretsId>dotnet-Consumer-68ab1d5a-3786-4f77-b1b8-cf2ba532760a</UserSecretsId>
+        <RootNamespace>CompetingConsumers.Consumer</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
