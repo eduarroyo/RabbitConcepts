@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <UserSecretsId>3b443225-3850-43b6-ba0d-943b72ad7cb9</UserSecretsId>
+        <RootNamespace>AppHost</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,8 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Consumer\Consumer.csproj" />
-      <ProjectReference Include="..\Producer\Producer.csproj" />
+        <ProjectReference Include="..\Consumer\Consumer.csproj"/>
+        <ProjectReference Include="..\Producer\Producer.csproj"/>
     </ItemGroup>
 
 </Project>
