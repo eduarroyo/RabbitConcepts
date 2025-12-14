@@ -21,7 +21,7 @@ public class Worker(
         {
             var message = $"Message {++messageCounter}";
             var encodedMessage = Encoding.UTF8.GetBytes(message);
-            await channel.BasicPublishAsync("", "pc-letterbox", encodedMessage, stoppingToken);
+            await channel.BasicPublishAsync("", queueName, encodedMessage, stoppingToken);
             logger.LogInformation("Published message: {message}", message);
             await Task.Delay(1000, stoppingToken);
         }
