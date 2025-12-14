@@ -5,7 +5,7 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <UserSecretsId>3b443225-3850-43b6-ba0d-943b72ad7cb9</UserSecretsId>
+        <UserSecretsId>75579fd5-cc64-4aec-81a1-6c4403f1073f</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,8 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Consumer\Consumer.csproj" />
-      <ProjectReference Include="..\Producer\Producer.csproj" />
+        <ProjectReference Include="..\CompetingConsumers.Consumer\CompetingConsumers.Consumer.csproj"/>
+        <ProjectReference Include="..\CompetingConsumers.Producer\CompetingConsumers.Producer.csproj"/>
     </ItemGroup>
-
 </Project>
