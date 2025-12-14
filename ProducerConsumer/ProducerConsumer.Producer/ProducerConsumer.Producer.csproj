@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <InvariantGlobalization>true</InvariantGlobalization>
         <PublishAot>true</PublishAot>
-        <UserSecretsId>dotnet-Consumer-68ab1d5a-3786-4f77-b1b8-cf2ba532760a</UserSecretsId>
+        <UserSecretsId>dotnet-Producer-553c108f-4ead-47a8-b20f-0bcf9ea56992</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,6 +15,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
+        <ProjectReference Include="..\..\ServiceDefaults\ServiceDefaults.csproj"/>
     </ItemGroup>
 </Project>
