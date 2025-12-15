@@ -20,7 +20,7 @@ public class Worker(
         var messageCounter = 0;
         while (!stoppingToken.IsCancellationRequested)
         {
-            var bindingKey = ++messageCounter % 3 == 0 ? bindingKeys[0] : bindingKeys[1];
+            var bindingKey = bindingKeys[++messageCounter % 3];
             var message = $"Message {messageCounter} - {bindingKey}";
             var encodedMessage = Encoding.UTF8.GetBytes(message);
             await channel.BasicPublishAsync(exchangeName, bindingKey, encodedMessage, stoppingToken);

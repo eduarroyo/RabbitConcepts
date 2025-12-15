@@ -11,14 +11,16 @@ public class Worker(
     {
         logger.LogInformation("Starting  at: {time}", DateTimeOffset.Now);
         var exchangeName = configuration.GetValue<string>("EXCHANGE_NAME")!;
-        var bindingKey = configuration.GetValue<string>("BINDING_KEY")!;
+        var bindingKeys = configuration.GetValue<string>("BINDING_KEYS")!.Split(",");
         var connection = await connectionFactory.CreateConnectionAsync(stoppingToken);
         CreateChannelOptions channelOptions = new(false, false);
         var channel = await connection.CreateChannelAsync(channelOptions, stoppingToken);
         await channel.ExchangeDeclareAsync(exchangeName, ExchangeType.Direct, cancellationToken: stoppingToken);
         var queueName = (await channel.QueueDeclareAsync(cancellationToken: stoppingToken)).QueueName;
         var consumer = new AsyncEventingBasicConsumer(channel);
-        await channel.QueueBindAsync(queueName, exchangeName, bindingKey, cancellationToken: stoppingToken);
+
+        foreach (var bindingKey in bindingKeys)
+            await channel.QueueBindAsync(queueName, exchangeName, bindingKey, cancellationToken: stoppingToken);
 
         consumer.ReceivedAsync += async (_, ea) =>
         {
