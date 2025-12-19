@@ -10,19 +10,19 @@ var broker = builder.AddRabbitMQ("Broker")
     .WithManagementPlugin();
 
 var routingExchhangeName = "Routing";
-var publisher = builder.AddProject<Routing_Publisher>("Routing-Publisher")
+var publisher = builder.AddProject<RoutingDirect_Publisher>("Routing-Publisher")
     .WithEnvironment("BINDING_KEYS", string.Join(",", analyticsBindingKey, paymentsBindingKey, bothBindingKey))
     .WithEnvironment("EXCHANGE_NAME", routingExchhangeName)
     .WithReference(broker)
     .WaitFor(broker);
 
-var analyticsSubscriber = builder.AddProject<Routing_Subscriber>("Routing-Subscriber-Analytics")
+var analyticsSubscriber = builder.AddProject<RoutingDirect_Subscriber>("Routing-Subscriber-Analytics")
     .WithEnvironment("EXCHANGE_NAME", routingExchhangeName)
     .WithEnvironment("BINDING_KEYS", string.Join(",", analyticsBindingKey, bothBindingKey))
     .WithReference(broker)
     .WaitFor(broker);
 
-var paymentsSubscriber = builder.AddProject<Routing_Subscriber>("Routing-Subscriber-Payments")
+var paymentsSubscriber = builder.AddProject<RoutingDirect_Subscriber>("Routing-Subscriber-Payments")
     .WithEnvironment("EXCHANGE_NAME", routingExchhangeName)
     .WithEnvironment("BINDING_KEYS", string.Join(",", paymentsBindingKey, bothBindingKey))
     .WithReference(broker)

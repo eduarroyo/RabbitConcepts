@@ -1,4 +1,4 @@
-namespace Routing.Subscriber;
+namespace RoutingDirect.Subscriber;
 
 public class Worker(
     ILogger<Worker> logger,

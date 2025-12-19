@@ -9,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Routing.Subscriber\Routing.Subscriber.csproj"/>
-        <ProjectReference Include="..\Routing.Publisher\Routing.Publisher.csproj"/>
+        <ProjectReference Include="..\RoutingDirect.Subscriber\RoutingDirect.Subscriber.csproj"/>
+        <ProjectReference Include="..\RoutingDirect.Publisher\RoutingDirect.Publisher.csproj"/>
     </ItemGroup>
 
 </Project>

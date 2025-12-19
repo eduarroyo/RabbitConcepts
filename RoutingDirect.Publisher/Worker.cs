@@ -1,4 +1,4 @@
-namespace Routing.Publisher;
+namespace RoutingDirect.Publisher;
 
 public class Worker(
     ILogger<Worker> logger,

@@ -26,13 +26,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducerConsumer.AppHost", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherSubscriber.AppHost", "PublisherSubscriber\PublisherSubscriber.AppHost\PublisherSubscriber.AppHost.csproj", "{999F6831-5927-4333-A619-7F905DF00D5B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Routing", "Routing", "{AD0A28F2-0DF3-477D-B545-5D6CAFF0EA2A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RoutingDirect", "RoutingDirect", "{AD0A28F2-0DF3-477D-B545-5D6CAFF0EA2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing.AppHost", "Routing.AppHost\Routing.AppHost.csproj", "{A529B6FF-C6BC-45C4-B5ED-BA83C548DF2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingDirect.AppHost", "RoutingDirect.AppHost\RoutingDirect.AppHost.csproj", "{A529B6FF-C6BC-45C4-B5ED-BA83C548DF2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing.Publisher", "Routing.Publisher\Routing.Publisher.csproj", "{27B976D2-6E9F-45A9-ACF4-41CEF4A0D741}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingDirect.Publisher", "RoutingDirect.Publisher\RoutingDirect.Publisher.csproj", "{27B976D2-6E9F-45A9-ACF4-41CEF4A0D741}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing.Subscriber", "Routing.Subscriber\Routing.Subscriber.csproj", "{F22F0D2E-8057-4E7A-9E8B-D4CAC3659607}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingDirect.Subscriber", "RoutingDirect.Subscriber\RoutingDirect.Subscriber.csproj", "{F22F0D2E-8057-4E7A-9E8B-D4CAC3659607}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RoutingTopic", "RoutingTopic", "{99D6F23D-26C8-4E9D-A4D4-4449207CB69F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

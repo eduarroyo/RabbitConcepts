@@ -6,8 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <InvariantGlobalization>true</InvariantGlobalization>
         <PublishAot>true</PublishAot>
-        <UserSecretsId>dotnet-Routing.Publisher-549ea4b8-b5fb-48fc-8f6c-153eafd32b42</UserSecretsId>
-        <RootNamespace>Routing.Publisher</RootNamespace>
+        <UserSecretsId>dotnet-Routing.Consumer-4047d5e7-a736-4ca8-baa2-5f75486daed9</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
