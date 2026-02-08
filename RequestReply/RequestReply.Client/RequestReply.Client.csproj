@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <PublishAot>true</PublishAot>
+        <UserSecretsId>dotnet-RequestReply.Client-1da3d5a1-8cff-4431-87ae-749bbe5fbfa0</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting"/>
+        <PackageReference Include="RabbitMQ.Client"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\ServiceDefaults\ServiceDefaults.csproj"/>
+    </ItemGroup>
+</Project>
